@@ -2,23 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quote of the Day</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <div class="container">
         <h1>Quote of the Day</h1>
-        <form method="POST">
-            <label for="quote">Enter your quote:</label>
-            <input type="text" id="quote" name="quote" required>
+        <form action="/" method="POST">
+            <input type="text" name="quote" placeholder="Enter your quote" required>
             <button type="submit">Add Quote</button>
         </form>
-
         <h2>All Quotes</h2>
         <ul>
             {% for quote in quotes %}
-                <li>{{ quote.content }}</li>
+                <li>{{ quote.text }}</li>
             {% endfor %}
         </ul>
     </div>
